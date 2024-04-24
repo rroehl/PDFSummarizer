@@ -1,0 +1,13 @@
+oldcode.txt
+notes.txt
+teststuff/
+data/
+chroma_db/
+__pycache__/
+upload_package/
+data/
+langchain_module/
+utility_modules/
+bedrock/
+
+
