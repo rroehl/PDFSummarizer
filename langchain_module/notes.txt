@@ -1,0 +1,27 @@
+docker pull alpine
+docker run -it -d -t -h alpine-service --name alpine-service  --cap-add=NET_ADMIN --privileged=true alpine:latest /bin/ash
+docker exec -it alpine-service /bin/ash
+
+docker cp requirements.txt alpine-service:/mystuff/requirements.txt
+
+pip install -r requirements.txt -t ./python
+langchain_community
+langchain
+
+pip install \
+-r requirements.txt \
+--platform manylinux2014_x86_64 \
+--target=package \
+--implementation cp \
+--python-version 3.11 \
+--only-binary=:all: --upgrade \
+-t ./python
+
+pip3 install --upgrade --platform manylinux_2_17_aarch64 --only-binary=:all: orjson  -t python
+pip3 install --upgrade --platform manylinux_2_17_aarch64 --only-binary=:all: pydantic-core -t python
+pip3 install --upgrade --platform manylinux_2_17_aarch64 --only-binary=:all: pydantic -t python
+pip3 install --upgrade --platform manylinux_2_17_aarch64 --only-binary=:all: numpy -t python
+
+zip -r langchain_layer.zip .
+
+docker cp alpine-service:/mystuff/langchain_layer.zip ./
