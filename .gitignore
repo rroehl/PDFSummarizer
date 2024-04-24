@@ -1,10 +1,9 @@
 oldcode.txt
-notes.txt
 teststuff/
 chroma_db/
 __pycache__/
 upload_package/
-langchain_module/python
+langchain_module/
 utility_modules/layer
 
 

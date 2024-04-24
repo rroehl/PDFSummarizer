@@ -1,0 +1,7 @@
+s3://robb.pdf.bucket/pdf/letter.pdf
+
+aws s2 cp s3://robb.pdf.bucket/pdf/letter.pdf  .
+
+aws lambda containers
+https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#runtimes-images-lp
+ 
