@@ -4,7 +4,7 @@ teststuff/
 chroma_db/
 __pycache__/
 upload_package/
-langchain_module/
-utility_modules/
+langchain_module/python
+utility_modules/layer
 
 
